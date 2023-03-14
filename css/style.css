@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #343F4F;
+    padding: 0 35px;
+}
+.wrapper{
+    max-width: 1200px;
+    position: relative;
+}
+.wrapper i{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 46px;
+    height: 46px;
+    background-color: white;
+    line-height: 46px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 1.2rem;
+}
+.wrapper i:first-child{
+    left: -23px;
+    display: none;
+}
+.wrapper i:last-child{
+    right: -23px;
+}
+.wrapper .carousel{
+    font-size: 0;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+.carousel.dragging{
+    cursor: grab;
+    scroll-behavior: auto;
+}
+.carousel.dragging img{
+    pointer-events: none;
+}
+.wrapper .carousel img{
+    height: 340px;
+    object-fit: cover;
+    margin-left: 14px;
+    width: calc(100%/3);
+}
+.wrapper .carousel img:first-child{
+    margin-left: 0px;
+}
+
+@media screen and (max-width:900px) {
+    .wrapper .carousel img{
+        width: calc(100%/2);
+    }
+}
+
+@media screen and (max-width:550px) {
+    .wrapper .carousel img{
+        width: calc(100%);
+    }
+}
